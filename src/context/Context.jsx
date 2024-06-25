@@ -12,12 +12,30 @@ const ContextProvider = (props) => {
   const [resultData, setResultData] = useState("");
 
   const onSent = async (prompt) => {
-    await runChat(prompt);
+    setResultData("");
+    setLoading(true);
+    setShowResult(true);
+    setRecentPrompt(input);
+    const response = await runChat(input);
+    setResultData(response);
+    setLoading(false);
+    setInput("");
   };
 
   //   onSent("What is React JS?");
 
-  const contextValue = {};
+  const contextValue = {
+    prevPrompts,
+    setPrevPrompts,
+    onSent,
+    setRecentPrompt,
+    recentPrompt,
+    showResult,
+    loading,
+    resultData,
+    input,
+    setInput,
+  };
 
   return (
     <Context.Provider value={contextValue}>{props.children}</Context.Provider>
