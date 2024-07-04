@@ -33,7 +33,9 @@ const ContextProvider = (props) => {
       }
     }
     let newResponse2 = newResponse.split('*').join('</br>');
-    let newResponse3 = newResponse2.split('undefined##').join('');
+    let newResponse3 = newResponse2
+      .split('undefined##' && 'undefined')
+      .join('');
     // setResultData(newResponse2);
     let newResponseArray = newResponse3.split(' ');
     for (let i = 0; i < newResponseArray.length; i++) {
