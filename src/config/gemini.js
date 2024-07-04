@@ -7,15 +7,16 @@
  * https://ai.google.dev/gemini-api/docs/get-started/node
  */
 
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
-const GEMINI_API_KEY = "AIzaSyCnY3uG1OzJJ1BTDTdDKIB3Po6czQSgpXY";
+const GEMINI_API_KEY = 'AIzaSyCnY3uG1OzJJ1BTDTdDKIB3Po6czQSgpXY';
 
+// const apiKey = process.env.REACT_APP_API_KEY;
 const apiKey = GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const model = genAI.getGenerativeModel({
-  model: "gemini-1.5-pro",
+  model: 'gemini-1.5-pro',
 });
 
 const generationConfig = {
@@ -23,7 +24,7 @@ const generationConfig = {
   topP: 0.95,
   topK: 64,
   maxOutputTokens: 8192,
-  responseMimeType: "text/plain",
+  responseMimeType: 'text/plain',
 };
 
 async function runChat(prompt) {

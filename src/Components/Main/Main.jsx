@@ -1,7 +1,7 @@
-import { useContext } from "react";
-import "./Main.css";
-import { assets } from "../../assets/assets";
-import { Context } from "../../context/Context";
+import { useContext } from 'react';
+import './Main.css';
+import { assets } from '../../assets/assets';
+import { Context } from '../../context/Context';
 
 const Main = () => {
   const {
@@ -56,7 +56,18 @@ const Main = () => {
             </div>
             <div className='result-data'>
               <img src={assets.gemini_icon} alt='' />
-              <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
+              {loading ? (
+                <div className='loader'>
+                  <hr />
+                  <hr />
+                  <hr />
+                </div>
+              ) : (
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: resultData,
+                  }}></p>
+              )}
             </div>
           </div>
         )}
@@ -77,7 +88,7 @@ const Main = () => {
           </div>
           <p className='bottom-info'>
             Gemini may display inaccurate info, including about people, so
-            double-check its responses.{" "}
+            double-check its responses.{' '}
             <a href='https://support.google.com/gemini/answer/13594961?visit_id=638548098538862174-1394949808&p=privacy_notice&rd=1#privacy_notice'>
               Your privacy & Gemini Apps
             </a>
