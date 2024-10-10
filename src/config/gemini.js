@@ -9,7 +9,7 @@
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
-const GEMINI_API_KEY = 'AIzaSyCnY3uG1OzJJ1BTDTdDKIB3Po6czQSgpXY';
+const GEMINI_API_KEY = ''; //TYPE YOUR KEY
 
 // const apiKey = process.env.REACT_APP_API_KEY;
 const apiKey = GEMINI_API_KEY;
