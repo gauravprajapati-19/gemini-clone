@@ -16,7 +16,7 @@ import {
 // **Recommended:** Use environment variables for secure API key storage
 // const apiKey = process.env.GEMINI_API_KEY;
 // const apiKey = "AIzaSyC5sseZXtzFen5SnajgbUm-rjhO2Yk-4lI";
-const apiKey = "AIzaSyCnY3uG1OzJJ1BTDTdDKIB3Po6czQSgpXY";
+const apiKey = "";
 
 const genAI = new GoogleGenerativeAI(apiKey);
 
